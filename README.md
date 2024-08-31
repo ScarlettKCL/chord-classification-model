@@ -1,2 +1,12 @@
 # chord-classification-model
-A model to classify piano/guitar chords as either major or minor using a recurrent neural network coded in python.
+## A model to classify piano/guitar chords as either major or minor using a recurrent neural network coded in MATLAB.
+Can be run in MATLAB.
+### About
+This project was carried out to further improve my understanding and ability to use neural networks in machine learning projects by giving me more experience working with recurrent neural networks, a variation of neural networks which is highly effective when used to classify sequential data, such as audio and video clips. The dataset used is the Musical Instrument Chord Classification (Audio) from [Kaggle](https://www.kaggle.com/datasets/deepcontractor/musical-instrument-chord-classification/code?datasetId=1915797&language=Python), which contains 859 audio files that are classified as either major or minor chords. Mel-Frequency Cepstral Coefficients (MFCCs) were used for feature extraction to preprocess the data before it was trained with the neural network, which contained a long short-term memory (LSTM) layer containing 100 hidden units as well as a softmax layer to apply the softmax function before the final classification layer.
+
+### Evaluation 
+Accuracy-loss graphs as well as confusion matrix:
+
+<img width="500" alt="chord-classification-model-accuruacy-loss-graphs" src="https://github.com/user-attachments/assets/ba09b103-2806-47a6-aa61-33fed547c79c">  <img width="400" alt="chord-classificaton-model-confusionmatrix" src="https://github.com/user-attachments/assets/c3127606-0eb6-42fc-bfc4-e344f7e10369">
+
+The graphs showing the change in accuracy and loss over the total number of iterations shows that the model's accuracy increased until being near perfect by approximately the 420th iteration, with the loss approaching zero, with both values having small variation for the remaining iterations. This shows that the training model was effective, however as the test accuracy was 83.63%, there is a chance that overfitting occurred, causing the test accuracy to be significantly lower than the training accuracy, so to improve the model, the network could be altered by adding dropout layers or adjusting the hyperparameters, and fewer epochs could be performed. The confusion matrix further displays the model's accuracy, with approximately 91% of the predicated majors being correct and 75.9% of the predicated minors being accurate, showing that the model is more effective for the major chord data.
